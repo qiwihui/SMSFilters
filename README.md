@@ -10,3 +10,7 @@
 # 创建环境
 conda env create --file=environment.yml
 ```
+
+## App
+
+见 `iOS`，目前尚未完成。
