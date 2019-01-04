@@ -14,3 +14,7 @@ conda env create --file=environment.yml
 ## App
 
 见 `iOS`，目前尚未完成。
+
+界面：
+
+![](images/screenshot_main.png)
