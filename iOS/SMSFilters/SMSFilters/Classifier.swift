@@ -41,7 +41,7 @@ class Classifier {
         let hmmPath = Bundle.main.resourceURL!.appendingPathComponent("iosjieba/iosjieba.bundle/dict/hmm_model.utf8").absoluteString
         let userDictPath = Bundle.main.resourceURL!.appendingPathComponent("iosjieba/iosjieba.bundle/dict/user.dict.utf8").absoluteString
         
-        ObjcJiebaInit(dictPath, hmmPath, userDictPath);
+//        ObjcJiebaInit(dictPath, hmmPath, userDictPath);
     }
     
     func predict(_ message:String) -> Bool {
@@ -78,7 +78,7 @@ class Classifier {
 //            range = CFStringTokenizerGetCurrentTokenRange(tokenizer);
 //        }
         var words = [String]()
-        ObjcJiebaCut(message, words)
+//        ObjcJiebaCut(message, words)
         
         return words as [String]
     }

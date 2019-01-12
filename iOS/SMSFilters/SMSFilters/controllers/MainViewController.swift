@@ -6,47 +6,105 @@
 //  Copyright © 2018 qiwihui. All rights reserved.
 //
 
-import UIKit
 import Alamofire
+import CoreData
+import UIKit
 import SafariServices
 
-enum Sections:Int {
-    case
-    base = 0,
-    rules = 1,
-    about = 2
-}
-
-enum RulesRows:Int {
-    case
-    white_number = 0,
-    black_number = 1,
-    white_keywords = 2,
-    black_keywords = 3
-}
-
-enum AboutRows:Int {
-    case
-    qa = 0,
-    share = 1,
-    review = 2,
-    about = 3
-}
-
-class ViewController: UITableViewController {
+class MainViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    @IBOutlet weak var enableCell: UITableViewCell!
-    @IBOutlet weak var testCell: UITableViewCell!
+    @IBOutlet var keywordWhiteCell: UITableViewCell!
+    @IBOutlet var keywordBlackCell: UITableViewCell!
+    @IBOutlet var senderWhiteCell: UITableViewCell!
+    @IBOutlet var senderBlackCell: UITableViewCell!
     
-//    @IBOutlet weak var tableView: UITableView!
+    var ruleType: Int16 = 1
+    var navTitle: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("加载规则条数")
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            // select count(*), type from Rule group by type;
+            let keypathExp = NSExpression(forKeyPath: "type")
+            let expression = NSExpression(forFunction: "count:", arguments: [keypathExp])
+            
+            let countDesc = NSExpressionDescription()
+            countDesc.expression = expression
+            countDesc.name = "count"
+            countDesc.expressionResultType = .integer64AttributeType
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Rule")
+            fetchRequest.returnsObjectsAsFaults = false
+            fetchRequest.propertiesToGroupBy = ["type"]
+            fetchRequest.propertiesToFetch = ["type", countDesc]
+            fetchRequest.resultType = .dictionaryResultType
+            
+            do {
+                let results = try appDelegate.persistentContainer.viewContext.fetch(fetchRequest)
+                let itemList = results as! [[String: Int]]
+                for item in itemList {
+                    let typeValue = item["type"]!
+                    let countValue = item["count"]!
+                    print("\(typeValue), \(countValue)")
+                    switch typeValue {
+                    case 1:
+                        setRuleNumberBadge(cell: keywordWhiteCell, number: countValue)
+                    case 2:
+                        setRuleNumberBadge(cell: keywordBlackCell, number: countValue)
+                    case 3:
+                        setRuleNumberBadge(cell: senderWhiteCell, number: countValue)
+                    case 4:
+                        setRuleNumberBadge(cell: senderBlackCell, number: countValue)
+                    default:
+                        break
+                    }
+                }
+            } catch let error as NSError {
+                let fetchError = error as NSError
+                print("Unable to Perform Fetch Request")
+                print("\(fetchError), \(fetchError.localizedDescription)")
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: 设置规则条数
+    func setRuleNumberBadge(cell: UITableViewCell, number: Int) {
+        let size: CGFloat = 26
+        let digits = CGFloat( "\(number)".count ) // digits in the label
+        let width = max(size, 0.7 * size * digits) // perfect circle is smallest allowed
+        let badge = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: size))
+        badge.text = "\(number)"
+        badge.layer.cornerRadius = size / 2
+        badge.layer.masksToBounds = true
+        badge.textAlignment = .center
+        badge.textColor = UIColor.white
+        badge.backgroundColor = UIColor.gray
+        cell.accessoryView = badge // !! change this line
+    }
+    
+    func convertToJSONArray(moArray: [NSManagedObject]) -> Any {
+        var jsonArray: [[String: Any]] = []
+        for item in moArray {
+            var dict: [String: Any] = [:]
+            for attribute in item.entity.attributesByName {
+                //check if value is present, then add key to dictionary so as to avoid the nil value crash
+                if let value = item.value(forKey: attribute.key) {
+                    dict[attribute.key] = value
+                }
+            }
+            jsonArray.append(dict)
+        }
+        return jsonArray
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -102,9 +160,27 @@ class ViewController: UITableViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
-        case 2:
-            print("自定义规则")
         case 1:
+            print("自定义规则")
+            switch indexPath.row {
+            case 0:
+                ruleType = 1
+                navTitle = "关键词白名单"
+            case 1:
+                ruleType = 2
+                navTitle = "关键词黑名单"
+            case 2:
+                ruleType = 3
+                navTitle = "号码白名单"
+            case 3:
+                ruleType = 4
+                navTitle = "号码黑名单"
+            default:
+                ruleType = 1
+                navTitle = "关键词白名单"
+            }
+            self.performSegue(withIdentifier: "editRules", sender: self)
+        case 2:
             print("关于")
             if indexPath.row == 0 {
                 print("使用和常见问题")
@@ -146,6 +222,7 @@ class ViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // MARK: 提交信息
     func submitSms(message: String, messageType: Int) {
         let header: HTTPHeaders = ["Content-Type":"application/json"]
         let parameters: Parameters = ["message":message,"type":messageType]
@@ -170,6 +247,7 @@ class ViewController: UITableViewController {
         }
     }
     
+    // MARK: 短信息
     func showToast(message : String) {
         
         let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
@@ -196,13 +274,19 @@ class ViewController: UITableViewController {
 //                let destinationController = segue.destination as! DetailTableViewController
 //                destinationController.message = "ok"
 //            }
+        } else if segue.identifier == "editRules" {
+            print("修改规则")
+            let navController = segue.destination as! UINavigationController
+            let ruleController = navController.viewControllers.first as! NewRuleTableViewController
+            ruleController.ruleType = ruleType
+            ruleController.navTitle = navTitle
         }
     }
 
 }
 
 // MARK: Previewing
-extension ViewController: UIViewControllerPreviewingDelegate {
+extension MainViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         show(viewControllerToCommit, sender: self)

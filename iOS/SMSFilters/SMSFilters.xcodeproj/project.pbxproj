@@ -8,47 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		1705270220FB27E400549739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1705270120FB27E400549739 /* AppDelegate.swift */; };
-		1705270420FB27E400549739 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1705270320FB27E400549739 /* ViewController.swift */; };
 		1705270720FB27E400549739 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1705270520FB27E400549739 /* Main.storyboard */; };
 		1705270920FB27E500549739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1705270820FB27E500549739 /* Assets.xcassets */; };
 		1705270C20FB27E500549739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1705270A20FB27E500549739 /* LaunchScreen.storyboard */; };
 		1707873821DC514D0023CA1A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17104D24214415BD00AC4061 /* Alamofire.framework */; };
-		179841C321DF1F670041F997 /* SpamMessageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17BA80D321DE601C0004C3A4 /* SpamMessageClassifier.mlmodel */; };
+		1774B65321E394860039A052 /* SMSFilters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1774B65121E394860039A052 /* SMSFilters.xcdatamodeld */; };
+		1774B65621E398A20039A052 /* NewRuleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1774B65521E398A20039A052 /* NewRuleTableViewController.swift */; };
+		17771EAF21EA4F340087AB48 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1705270320FB27E400549739 /* MainViewController.swift */; };
+		17771EB721EA5B440087AB48 /* MessageFilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17771EB621EA5B440087AB48 /* MessageFilterExtension.swift */; };
+		17771EBB21EA5B440087AB48 /* MessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 17771EB421EA5B440087AB48 /* MessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		17BA80D521DE601C0004C3A4 /* words_idf.json in Resources */ = {isa = PBXBuildFile; fileRef = 17BA80D221DE601B0004C3A4 /* words_idf.json */; };
 		17BA80D721DE601C0004C3A4 /* SpamMessageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17BA80D321DE601C0004C3A4 /* SpamMessageClassifier.mlmodel */; };
 		17BA80D921DE601C0004C3A4 /* words_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 17BA80D421DE601C0004C3A4 /* words_array.json */; };
 		17BA80DD21DEFE5D0004C3A4 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1705272520FB715600549739 /* Classifier.swift */; };
-		17D3297621DF1C55002DACC1 /* MessageFilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D3297521DF1C55002DACC1 /* MessageFilterExtension.swift */; };
-		17D3297A21DF1C55002DACC1 /* SMSFiltersMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 17D3297321DF1C55002DACC1 /* SMSFiltersMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		17D3298121DF1D53002DACC1 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1705272520FB715600549739 /* Classifier.swift */; };
 		17DC003A20FCF73F00E212D0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17DC003920FCF73F00E212D0 /* Settings.bundle */; };
 		17F77B6A21DF5E7800D0C98B /* Segmentor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17F77B4021DF5E7800D0C98B /* Segmentor.cpp */; };
-		17F77B6B21DF5E7800D0C98B /* Segmentor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17F77B4021DF5E7800D0C98B /* Segmentor.cpp */; };
 		17F77B6C21DF5E7800D0C98B /* iosjieba.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17F77B4221DF5E7800D0C98B /* iosjieba.bundle */; };
-		17F77B6D21DF5E7800D0C98B /* iosjieba.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17F77B4221DF5E7800D0C98B /* iosjieba.bundle */; };
 		17F77B6E21DF5E7800D0C98B /* MySegmentor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 17F77B6921DF5E7800D0C98B /* MySegmentor.mm */; };
-		17F77B6F21DF5E7800D0C98B /* MySegmentor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 17F77B6921DF5E7800D0C98B /* MySegmentor.mm */; };
 		17FB509221D70DE90066C203 /* QAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB509121D70DE90066C203 /* QAViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		17D3297821DF1C55002DACC1 /* PBXContainerItemProxy */ = {
+		17771EB921EA5B440087AB48 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 170526F620FB27E300549739 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 17D3297221DF1C55002DACC1;
-			remoteInfo = SMSFiltersMessageExtension;
+			remoteGlobalIDString = 17771EB321EA5B440087AB48;
+			remoteInfo = MessageExtension;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1705272220FB29F000549739 /* Embed App Extensions */ = {
+		178E77BB21E4EC5400EC08F7 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				17D3297A21DF1C55002DACC1 /* SMSFiltersMessageExtension.appex in Embed App Extensions */,
+				17771EBB21EA5B440087AB48 /* MessageExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,20 +55,22 @@
 /* Begin PBXFileReference section */
 		170526FE20FB27E400549739 /* SMSFilters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSFilters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1705270120FB27E400549739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1705270320FB27E400549739 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1705270320FB27E400549739 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1705270620FB27E400549739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1705270820FB27E500549739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1705270B20FB27E500549739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1705270D20FB27E500549739 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1705272520FB715600549739 /* Classifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 		17104D24214415BD00AC4061 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		1774B65221E394860039A052 /* SMSFilters.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SMSFilters.xcdatamodel; sourceTree = "<group>"; };
+		1774B65521E398A20039A052 /* NewRuleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRuleTableViewController.swift; sourceTree = "<group>"; };
+		17771EB421EA5B440087AB48 /* MessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		17771EB621EA5B440087AB48 /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
+		17771EB821EA5B440087AB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		178A86E821DD1B34006A121B /* SMSFilters-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SMSFilters-Bridging-Header.h"; sourceTree = "<group>"; };
 		17BA80D221DE601B0004C3A4 /* words_idf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words_idf.json; sourceTree = "<group>"; };
 		17BA80D321DE601C0004C3A4 /* SpamMessageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SpamMessageClassifier.mlmodel; sourceTree = "<group>"; };
 		17BA80D421DE601C0004C3A4 /* words_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words_array.json; sourceTree = "<group>"; };
-		17D3297321DF1C55002DACC1 /* SMSFiltersMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SMSFiltersMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		17D3297521DF1C55002DACC1 /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
-		17D3297721DF1C55002DACC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17DC003920FCF73F00E212D0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		17F77B4021DF5E7800D0C98B /* Segmentor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Segmentor.cpp; sourceTree = "<group>"; };
 		17F77B4121DF5E7800D0C98B /* MySegmentor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySegmentor.h; sourceTree = "<group>"; };
@@ -125,7 +124,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17D3297021DF1C55002DACC1 /* Frameworks */ = {
+		17771EB121EA5B440087AB48 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,9 +137,10 @@
 		170526F520FB27E300549739 = {
 			isa = PBXGroup;
 			children = (
+				1774B65121E394860039A052 /* SMSFilters.xcdatamodeld */,
 				17E88F192160779C00D4610E /* Resources */,
 				1705270020FB27E400549739 /* SMSFilters */,
-				17D3297421DF1C55002DACC1 /* SMSFiltersMessageExtension */,
+				17771EB521EA5B440087AB48 /* MessageExtension */,
 				170526FF20FB27E400549739 /* Products */,
 				17104D23214415BD00AC4061 /* Frameworks */,
 			);
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				170526FE20FB27E400549739 /* SMSFilters.app */,
-				17D3297321DF1C55002DACC1 /* SMSFiltersMessageExtension.appex */,
+				17771EB421EA5B440087AB48 /* MessageExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,22 +180,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		17771EB521EA5B440087AB48 /* MessageExtension */ = {
+			isa = PBXGroup;
+			children = (
+				17771EB621EA5B440087AB48 /* MessageFilterExtension.swift */,
+				17771EB821EA5B440087AB48 /* Info.plist */,
+			);
+			path = MessageExtension;
+			sourceTree = "<group>";
+		};
 		17A36C2C21D672FF0025668C /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1705270320FB27E400549739 /* ViewController.swift */,
+				1705270320FB27E400549739 /* MainViewController.swift */,
 				17FB509121D70DE90066C203 /* QAViewController.swift */,
+				1774B65521E398A20039A052 /* NewRuleTableViewController.swift */,
 			);
 			path = controllers;
-			sourceTree = "<group>";
-		};
-		17D3297421DF1C55002DACC1 /* SMSFiltersMessageExtension */ = {
-			isa = PBXGroup;
-			children = (
-				17D3297521DF1C55002DACC1 /* MessageFilterExtension.swift */,
-				17D3297721DF1C55002DACC1 /* Info.plist */,
-			);
-			path = SMSFiltersMessageExtension;
 			sourceTree = "<group>";
 		};
 		17E88F192160779C00D4610E /* Resources */ = {
@@ -281,34 +282,34 @@
 				170526FA20FB27E300549739 /* Sources */,
 				170526FB20FB27E300549739 /* Frameworks */,
 				170526FC20FB27E300549739 /* Resources */,
-				1705272220FB29F000549739 /* Embed App Extensions */,
 				17104D262144160E00AC4061 /* ShellScript */,
+				178E77BB21E4EC5400EC08F7 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				17D3297921DF1C55002DACC1 /* PBXTargetDependency */,
+				17771EBA21EA5B440087AB48 /* PBXTargetDependency */,
 			);
 			name = SMSFilters;
 			productName = SMSFilters;
 			productReference = 170526FE20FB27E400549739 /* SMSFilters.app */;
 			productType = "com.apple.product-type.application";
 		};
-		17D3297221DF1C55002DACC1 /* SMSFiltersMessageExtension */ = {
+		17771EB321EA5B440087AB48 /* MessageExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17D3297B21DF1C55002DACC1 /* Build configuration list for PBXNativeTarget "SMSFiltersMessageExtension" */;
+			buildConfigurationList = 17771EBC21EA5B440087AB48 /* Build configuration list for PBXNativeTarget "MessageExtension" */;
 			buildPhases = (
-				17D3296F21DF1C55002DACC1 /* Sources */,
-				17D3297021DF1C55002DACC1 /* Frameworks */,
-				17D3297121DF1C55002DACC1 /* Resources */,
+				17771EB021EA5B440087AB48 /* Sources */,
+				17771EB121EA5B440087AB48 /* Frameworks */,
+				17771EB221EA5B440087AB48 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SMSFiltersMessageExtension;
-			productName = SMSFiltersMessageExtension;
-			productReference = 17D3297321DF1C55002DACC1 /* SMSFiltersMessageExtension.appex */;
+			name = MessageExtension;
+			productName = MessageExtension;
+			productReference = 17771EB421EA5B440087AB48 /* MessageExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -326,7 +327,7 @@
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
 					};
-					17D3297221DF1C55002DACC1 = {
+					17771EB321EA5B440087AB48 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -345,7 +346,7 @@
 			projectRoot = "";
 			targets = (
 				170526FD20FB27E300549739 /* SMSFilters */,
-				17D3297221DF1C55002DACC1 /* SMSFiltersMessageExtension */,
+				17771EB321EA5B440087AB48 /* MessageExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -365,11 +366,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17D3297121DF1C55002DACC1 /* Resources */ = {
+		17771EB221EA5B440087AB48 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17F77B6D21DF5E7800D0C98B /* iosjieba.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +400,9 @@
 			files = (
 				17BA80DD21DEFE5D0004C3A4 /* Classifier.swift in Sources */,
 				17FB509221D70DE90066C203 /* QAViewController.swift in Sources */,
-				1705270420FB27E400549739 /* ViewController.swift in Sources */,
+				1774B65321E394860039A052 /* SMSFilters.xcdatamodeld in Sources */,
+				17771EAF21EA4F340087AB48 /* MainViewController.swift in Sources */,
+				1774B65621E398A20039A052 /* NewRuleTableViewController.swift in Sources */,
 				17BA80D721DE601C0004C3A4 /* SpamMessageClassifier.mlmodel in Sources */,
 				17F77B6A21DF5E7800D0C98B /* Segmentor.cpp in Sources */,
 				17F77B6E21DF5E7800D0C98B /* MySegmentor.mm in Sources */,
@@ -408,25 +410,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17D3296F21DF1C55002DACC1 /* Sources */ = {
+		17771EB021EA5B440087AB48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				179841C321DF1F670041F997 /* SpamMessageClassifier.mlmodel in Sources */,
-				17D3298121DF1D53002DACC1 /* Classifier.swift in Sources */,
-				17F77B6F21DF5E7800D0C98B /* MySegmentor.mm in Sources */,
-				17F77B6B21DF5E7800D0C98B /* Segmentor.cpp in Sources */,
-				17D3297621DF1C55002DACC1 /* MessageFilterExtension.swift in Sources */,
+				17771EB721EA5B440087AB48 /* MessageFilterExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		17D3297921DF1C55002DACC1 /* PBXTargetDependency */ = {
+		17771EBA21EA5B440087AB48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 17D3297221DF1C55002DACC1 /* SMSFiltersMessageExtension */;
-			targetProxy = 17D3297821DF1C55002DACC1 /* PBXContainerItemProxy */;
+			target = 17771EB321EA5B440087AB48 /* MessageExtension */;
+			targetProxy = 17771EB921EA5B440087AB48 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -588,10 +586,10 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiwihui.SMSFilters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SMSFilters/SMSFilters-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv7 armv7s arm64e";
+				VALID_ARCHS = "armv7 armv7s arm64e arm64";
 			};
 			name = Debug;
 		};
@@ -616,21 +614,20 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiwihui.SMSFilters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SMSFilters/SMSFilters-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv7 armv7s arm64e";
+				VALID_ARCHS = "armv7 armv7s arm64e arm64";
 			};
 			name = Release;
 		};
-		17D3297C21DF1C55002DACC1 /* Debug */ = {
+		17771EBD21EA5B440087AB48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S74V2RZ46A;
-				INFOPLIST_FILE = SMSFiltersMessageExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				INFOPLIST_FILE = MessageExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,41 +635,32 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiwihui.SMSFilters.MessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "SMSFilters/SMSFilters-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv7 armv7s arm64e";
 			};
 			name = Debug;
 		};
-		17D3297D21DF1C55002DACC1 /* Release */ = {
+		17771EBE21EA5B440087AB48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S74V2RZ46A;
-				INFOPLIST_FILE = SMSFiltersMessageExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				INFOPLIST_FILE = MessageExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiwihui.SMSFilters.MessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "SMSFilters/SMSFilters-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv7 armv7s arm64e";
 			};
 			name = Release;
 		};
@@ -697,16 +685,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		17D3297B21DF1C55002DACC1 /* Build configuration list for PBXNativeTarget "SMSFiltersMessageExtension" */ = {
+		17771EBC21EA5B440087AB48 /* Build configuration list for PBXNativeTarget "MessageExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				17D3297C21DF1C55002DACC1 /* Debug */,
-				17D3297D21DF1C55002DACC1 /* Release */,
+				17771EBD21EA5B440087AB48 /* Debug */,
+				17771EBE21EA5B440087AB48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1774B65121E394860039A052 /* SMSFilters.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1774B65221E394860039A052 /* SMSFilters.xcdatamodel */,
+			);
+			currentVersion = 1774B65221E394860039A052 /* SMSFilters.xcdatamodel */;
+			path = SMSFilters.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 170526F620FB27E300549739 /* Project object */;
 }
