@@ -17,6 +17,9 @@
 		17771EAF21EA4F340087AB48 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1705270320FB27E400549739 /* MainViewController.swift */; };
 		17771EB721EA5B440087AB48 /* MessageFilterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17771EB621EA5B440087AB48 /* MessageFilterExtension.swift */; };
 		17771EBB21EA5B440087AB48 /* MessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 17771EB421EA5B440087AB48 /* MessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		17771EBF21EA5E4B0087AB48 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1705272520FB715600549739 /* Classifier.swift */; };
+		17771EC021EA60B50087AB48 /* SMSFilters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1774B65121E394860039A052 /* SMSFilters.xcdatamodeld */; };
+		17771EC121EA63A10087AB48 /* SpamMessageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17BA80D321DE601C0004C3A4 /* SpamMessageClassifier.mlmodel */; };
 		17BA80D521DE601C0004C3A4 /* words_idf.json in Resources */ = {isa = PBXBuildFile; fileRef = 17BA80D221DE601B0004C3A4 /* words_idf.json */; };
 		17BA80D721DE601C0004C3A4 /* SpamMessageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17BA80D321DE601C0004C3A4 /* SpamMessageClassifier.mlmodel */; };
 		17BA80D921DE601C0004C3A4 /* words_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 17BA80D421DE601C0004C3A4 /* words_array.json */; };
@@ -414,6 +417,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17771EC121EA63A10087AB48 /* SpamMessageClassifier.mlmodel in Sources */,
+				17771EBF21EA5E4B0087AB48 /* Classifier.swift in Sources */,
+				17771EC021EA60B50087AB48 /* SMSFilters.xcdatamodeld in Sources */,
 				17771EB721EA5B440087AB48 /* MessageFilterExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,7 +633,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S74V2RZ46A;
 				INFOPLIST_FILE = MessageExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -649,7 +655,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S74V2RZ46A;
 				INFOPLIST_FILE = MessageExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
