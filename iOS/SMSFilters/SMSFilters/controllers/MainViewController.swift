@@ -48,21 +48,19 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
             do {
                 let results = try appDelegate.persistentContainer.viewContext.fetch(fetchRequest)
                 let itemList = results as! [[String: Int]]
+                var itemChanged: [Int: Bool] = [:]
+                let keyCell: [Int: UITableViewCell] = [1: keywordWhiteCell, 2:keywordBlackCell, 3:senderWhiteCell, 4:senderBlackCell]
+               
                 for item in itemList {
                     let typeValue = item["type"]!
                     let countValue = item["count"]!
-                    print("\(typeValue), \(countValue)")
-                    switch typeValue {
-                    case 1:
-                        setRuleNumberBadge(cell: keywordWhiteCell, number: countValue)
-                    case 2:
-                        setRuleNumberBadge(cell: keywordBlackCell, number: countValue)
-                    case 3:
-                        setRuleNumberBadge(cell: senderWhiteCell, number: countValue)
-                    case 4:
-                        setRuleNumberBadge(cell: senderBlackCell, number: countValue)
-                    default:
-                        break
+                    setRuleNumberBadge(cell: keyCell[typeValue]!, number: countValue)
+                    itemChanged[typeValue] = true
+                }
+                for key in [1,2,3,4] {
+                    let keyExists = itemChanged[key] != nil
+                    if !keyExists {
+                        unsetRuleNumberBadge(cell: keyCell[key]!)
                     }
                 }
             } catch let error as NSError {
@@ -89,7 +87,11 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
         badge.textAlignment = .center
         badge.textColor = UIColor.white
         badge.backgroundColor = UIColor.gray
-        cell.accessoryView = badge // !! change this line
+        cell.accessoryView = badge
+    }
+    
+    func unsetRuleNumberBadge(cell: UITableViewCell) {
+        cell.accessoryView = nil
     }
     
     func convertToJSONArray(moArray: [NSManagedObject]) -> Any {
