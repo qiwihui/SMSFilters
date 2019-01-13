@@ -163,6 +163,7 @@ class NewRuleTableViewController: UITableViewController, NSFetchedResultsControl
         showInputDialog()
     }
     
+    // 输入窗口
     func showInputDialog() {
         let alertController = UIAlertController(title: "请输入关键字", message: nil, preferredStyle: .alert)
         
@@ -170,10 +171,12 @@ class NewRuleTableViewController: UITableViewController, NSFetchedResultsControl
             // getting the input values from user
             if let name = alertController.textFields?[0].text {
                 if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                    let newRule = RuleMO(context: appDelegate.persistentContainer.viewContext)
-                    newRule.name = name
-                    newRule.type = self.ruleType
-                    appDelegate.saveContext()
+                    if !self.newNameExists(name: name) {
+                        let newRule = RuleMO(context: appDelegate.persistentContainer.viewContext)
+                        newRule.name = name
+                        newRule.type = self.ruleType
+                        appDelegate.saveContext()
+                    }
                 }
                 self.tableView.reloadData()
             }
@@ -189,5 +192,27 @@ class NewRuleTableViewController: UITableViewController, NSFetchedResultsControl
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // 检查是否存在
+    func newNameExists(name: String) -> Bool {
+        let fetchRequest: NSFetchRequest<RuleMO> = RuleMO.fetchRequest()
+
+        let nameKeyPredicate = NSPredicate(format: "name == %@", name)
+        let typeKeyPredicate = NSPredicate(format: "type == %i", ruleType)
+        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [nameKeyPredicate, typeKeyPredicate])
+        fetchRequest.predicate = andPredicate
+        
+        var results: [NSManagedObject] = []
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            do {
+                results = try appDelegate.persistentContainer.viewContext.fetch(fetchRequest)
+            }
+            catch {
+                print("error executing fetch request: \(error)")
+            }
+        }
+        return results.count > 0
     }
 }
