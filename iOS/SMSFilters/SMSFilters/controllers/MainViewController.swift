@@ -21,6 +21,8 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
     var ruleType: Int16 = 1
     var navTitle: String = ""
     
+    let classfier = Classifier()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -130,7 +132,7 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
                     self.present(alert, animated: true)
                 } else {
                     // 判断短信类型
-                    let classfier = Classifier()
+                    
                     let result = classfier.predict(message)
                     print("Result: \(result)")
                     let messageType = result ? 1 : 0
