@@ -37,11 +37,11 @@ class Classifier {
             fatalError("oops could not load words_idf file")
         }
         
-        let dictPath = Bundle.main.resourceURL!.appendingPathComponent("iosjieba/iosjieba.bundle/dict/jieba.dict.small.utf8").absoluteString
-        let hmmPath = Bundle.main.resourceURL!.appendingPathComponent("iosjieba/iosjieba.bundle/dict/hmm_model.utf8").absoluteString
-        let userDictPath = Bundle.main.resourceURL!.appendingPathComponent("iosjieba/iosjieba.bundle/dict/user.dict.utf8").absoluteString
+        let dictPath = Bundle.main.resourcePath!+"/iosjieba.bundle/dict/jieba.dict.small.utf8"
+        let hmmPath = Bundle.main.resourcePath!+"/iosjieba.bundle/dict/hmm_model.utf8"
+        let userDictPath = Bundle.main.resourcePath!+"/iosjieba.bundle/dict/user.dict.utf8"
         
-//        ObjcJiebaInit(dictPath, hmmPath, userDictPath);
+        JiebaWrapper().objcJiebaInit(dictPath, forPath: hmmPath, forDictPath: userDictPath);
     }
     
     func predict(_ message:String) -> Bool {
@@ -60,27 +60,9 @@ class Classifier {
     
     func tokenize(_ message:String) -> [String] {
         print("tokenize...")
-//        let tokenizer = CFStringTokenizerCreate(nil,
-//                                                message as CFString,
-//                                                CFRangeMake(0, message.count),
-//                                                kCFStringTokenizerUnitWordBoundary, nil)
-//
-//        CFStringTokenizerAdvanceToNextToken(tokenizer)
-//        var range = CFStringTokenizerGetCurrentTokenRange(tokenizer)
-//        var words = [String]()
-//        while range.length > 0 {
-//            let startIndex = message.index(message.startIndex, offsetBy: range.location as Int)
-//            let endIndex = message.index(message.startIndex, offsetBy: range.location as Int + range.length as Int)
-//            let token = String(message[startIndex..<endIndex])
-//            words.append(token)
-//            // print(token)
-//            CFStringTokenizerAdvanceToNextToken(tokenizer);
-//            range = CFStringTokenizerGetCurrentTokenRange(tokenizer);
-//        }
-        var words = [String]()
-//        ObjcJiebaCut(message, words)
-        
-        return words as [String]
+        let words = NSMutableArray()
+        JiebaWrapper().objcJiebaCut(message, toWords: words)
+        return words as! [String]
     }
 
     func countVector(sentence:String) -> [Int:Int]? {
