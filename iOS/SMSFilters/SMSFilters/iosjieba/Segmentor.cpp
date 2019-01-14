@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 yanyiwu. All rights reserved.
 //
 
-#include "Segmentor.hpp"
+#include "Segmentor.h"
 #include <iostream>
 
 using namespace cppjieba;

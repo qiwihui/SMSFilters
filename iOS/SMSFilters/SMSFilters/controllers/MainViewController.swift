@@ -21,6 +21,8 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
     var ruleType: Int16 = 1
     var navTitle: String = ""
     
+    let classfier = Classifier()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -48,21 +50,19 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
             do {
                 let results = try appDelegate.persistentContainer.viewContext.fetch(fetchRequest)
                 let itemList = results as! [[String: Int]]
+                var itemChanged: [Int: Bool] = [:]
+                let keyCell: [Int: UITableViewCell] = [1: keywordWhiteCell, 2:keywordBlackCell, 3:senderWhiteCell, 4:senderBlackCell]
+               
                 for item in itemList {
                     let typeValue = item["type"]!
                     let countValue = item["count"]!
-                    print("\(typeValue), \(countValue)")
-                    switch typeValue {
-                    case 1:
-                        setRuleNumberBadge(cell: keywordWhiteCell, number: countValue)
-                    case 2:
-                        setRuleNumberBadge(cell: keywordBlackCell, number: countValue)
-                    case 3:
-                        setRuleNumberBadge(cell: senderWhiteCell, number: countValue)
-                    case 4:
-                        setRuleNumberBadge(cell: senderBlackCell, number: countValue)
-                    default:
-                        break
+                    setRuleNumberBadge(cell: keyCell[typeValue]!, number: countValue)
+                    itemChanged[typeValue] = true
+                }
+                for key in [1,2,3,4] {
+                    let keyExists = itemChanged[key] != nil
+                    if !keyExists {
+                        unsetRuleNumberBadge(cell: keyCell[key]!)
                     }
                 }
             } catch let error as NSError {
@@ -89,7 +89,11 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
         badge.textAlignment = .center
         badge.textColor = UIColor.white
         badge.backgroundColor = UIColor.gray
-        cell.accessoryView = badge // !! change this line
+        cell.accessoryView = badge
+    }
+    
+    func unsetRuleNumberBadge(cell: UITableViewCell) {
+        cell.accessoryView = nil
     }
     
     func convertToJSONArray(moArray: [NSManagedObject]) -> Any {
@@ -128,7 +132,7 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
                     self.present(alert, animated: true)
                 } else {
                     // 判断短信类型
-                    let classfier = Classifier()
+                    
                     let result = classfier.predict(message)
                     print("Result: \(result)")
                     let messageType = result ? 1 : 0
@@ -247,10 +251,9 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
         }
     }
     
-    // MARK: 短信息
+    // MARK: 提示信息
     func showToast(message : String) {
-        
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-120, width: 150, height: 35))
         toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastLabel.textColor = UIColor.white
         toastLabel.textAlignment = .center;
@@ -260,7 +263,7 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
         toastLabel.layer.cornerRadius = 10;
         toastLabel.clipsToBounds  =  true
         self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 2.0, delay: 0.1, options: .curveEaseOut, animations: {
             toastLabel.alpha = 0.0
         }, completion: {(isCompleted) in
             toastLabel.removeFromSuperview()

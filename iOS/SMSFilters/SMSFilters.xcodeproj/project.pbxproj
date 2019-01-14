@@ -12,6 +12,7 @@
 		1705270920FB27E500549739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1705270820FB27E500549739 /* Assets.xcassets */; };
 		1705270C20FB27E500549739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1705270A20FB27E500549739 /* LaunchScreen.storyboard */; };
 		1707873821DC514D0023CA1A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17104D24214415BD00AC4061 /* Alamofire.framework */; };
+		17428FA921EC57FA00F7F621 /* iosjiebaWrappper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 17428FA821EC57FA00F7F621 /* iosjiebaWrappper.mm */; };
 		1774B65321E394860039A052 /* SMSFilters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1774B65121E394860039A052 /* SMSFilters.xcdatamodeld */; };
 		1774B65621E398A20039A052 /* NewRuleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1774B65521E398A20039A052 /* NewRuleTableViewController.swift */; };
 		17771EAF21EA4F340087AB48 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1705270320FB27E400549739 /* MainViewController.swift */; };
@@ -20,6 +21,8 @@
 		17771EBF21EA5E4B0087AB48 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1705272520FB715600549739 /* Classifier.swift */; };
 		17771EC021EA60B50087AB48 /* SMSFilters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1774B65121E394860039A052 /* SMSFilters.xcdatamodeld */; };
 		17771EC121EA63A10087AB48 /* SpamMessageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17BA80D321DE601C0004C3A4 /* SpamMessageClassifier.mlmodel */; };
+		17873A8E21EC796000BA2199 /* iosjiebaWrappper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 17428FA821EC57FA00F7F621 /* iosjiebaWrappper.mm */; };
+		17873A8F21EC798000BA2199 /* Segmentor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17F77B4021DF5E7800D0C98B /* Segmentor.cpp */; };
 		17BA80D521DE601C0004C3A4 /* words_idf.json in Resources */ = {isa = PBXBuildFile; fileRef = 17BA80D221DE601B0004C3A4 /* words_idf.json */; };
 		17BA80D721DE601C0004C3A4 /* SpamMessageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17BA80D321DE601C0004C3A4 /* SpamMessageClassifier.mlmodel */; };
 		17BA80D921DE601C0004C3A4 /* words_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 17BA80D421DE601C0004C3A4 /* words_array.json */; };
@@ -27,7 +30,6 @@
 		17DC003A20FCF73F00E212D0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17DC003920FCF73F00E212D0 /* Settings.bundle */; };
 		17F77B6A21DF5E7800D0C98B /* Segmentor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17F77B4021DF5E7800D0C98B /* Segmentor.cpp */; };
 		17F77B6C21DF5E7800D0C98B /* iosjieba.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17F77B4221DF5E7800D0C98B /* iosjieba.bundle */; };
-		17F77B6E21DF5E7800D0C98B /* MySegmentor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 17F77B6921DF5E7800D0C98B /* MySegmentor.mm */; };
 		17FB509221D70DE90066C203 /* QAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB509121D70DE90066C203 /* QAViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,56 +67,56 @@
 		1705270D20FB27E500549739 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1705272520FB715600549739 /* Classifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 		17104D24214415BD00AC4061 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		17428FA821EC57FA00F7F621 /* iosjiebaWrappper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = iosjiebaWrappper.mm; sourceTree = "<group>"; };
+		17428FAA21EC581F00F7F621 /* iosjiebaWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iosjiebaWrapper.h; sourceTree = "<group>"; };
+		17428FCC21EC5B2600F7F621 /* DictTrie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DictTrie.hpp; sourceTree = "<group>"; };
+		17428FCD21EC5B2600F7F621 /* Unicode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Unicode.hpp; sourceTree = "<group>"; };
+		17428FCE21EC5B2600F7F621 /* PreFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PreFilter.hpp; sourceTree = "<group>"; };
+		17428FCF21EC5B2600F7F621 /* FullSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FullSegment.hpp; sourceTree = "<group>"; };
+		17428FD021EC5B2600F7F621 /* MixSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MixSegment.hpp; sourceTree = "<group>"; };
+		17428FD121EC5B2600F7F621 /* MPSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MPSegment.hpp; sourceTree = "<group>"; };
+		17428FD221EC5B2600F7F621 /* KeywordExtractor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KeywordExtractor.hpp; sourceTree = "<group>"; };
+		17428FD321EC5B2600F7F621 /* Jieba.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Jieba.hpp; sourceTree = "<group>"; };
+		17428FD421EC5B2600F7F621 /* TextRankExtractor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextRankExtractor.hpp; sourceTree = "<group>"; };
+		17428FD521EC5B2600F7F621 /* PosTagger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PosTagger.hpp; sourceTree = "<group>"; };
+		17428FD621EC5B2600F7F621 /* Trie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Trie.hpp; sourceTree = "<group>"; };
+		17428FD821EC5B2600F7F621 /* ThreadPool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ThreadPool.hpp; sourceTree = "<group>"; };
+		17428FD921EC5B2600F7F621 /* Colors.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Colors.hpp; sourceTree = "<group>"; };
+		17428FDA21EC5B2600F7F621 /* StdExtension.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StdExtension.hpp; sourceTree = "<group>"; };
+		17428FDB21EC5B2600F7F621 /* StringUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StringUtil.hpp; sourceTree = "<group>"; };
+		17428FDC21EC5B2600F7F621 /* LocalVector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LocalVector.hpp; sourceTree = "<group>"; };
+		17428FDD21EC5B2600F7F621 /* BlockingQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlockingQueue.hpp; sourceTree = "<group>"; };
+		17428FDE21EC5B2600F7F621 /* Closure.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Closure.hpp; sourceTree = "<group>"; };
+		17428FDF21EC5B2600F7F621 /* Config.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Config.hpp; sourceTree = "<group>"; };
+		17428FE021EC5B2600F7F621 /* ForcePublic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ForcePublic.hpp; sourceTree = "<group>"; };
+		17428FE121EC5B2600F7F621 /* BoundedQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BoundedQueue.hpp; sourceTree = "<group>"; };
+		17428FE221EC5B2600F7F621 /* ArgvContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ArgvContext.hpp; sourceTree = "<group>"; };
+		17428FE321EC5B2600F7F621 /* Condition.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Condition.hpp; sourceTree = "<group>"; };
+		17428FE421EC5B2600F7F621 /* Md5.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Md5.hpp; sourceTree = "<group>"; };
+		17428FE521EC5B2600F7F621 /* Thread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Thread.hpp; sourceTree = "<group>"; };
+		17428FE621EC5B2600F7F621 /* MutexLock.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MutexLock.hpp; sourceTree = "<group>"; };
+		17428FE721EC5B2600F7F621 /* FileLock.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileLock.hpp; sourceTree = "<group>"; };
+		17428FE821EC5B2600F7F621 /* Logging.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Logging.hpp; sourceTree = "<group>"; };
+		17428FE921EC5B2600F7F621 /* NonCopyable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NonCopyable.hpp; sourceTree = "<group>"; };
+		17428FEA21EC5B2600F7F621 /* BoundedBlockingQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BoundedBlockingQueue.hpp; sourceTree = "<group>"; };
+		17428FEB21EC5B2600F7F621 /* QuerySegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = QuerySegment.hpp; sourceTree = "<group>"; };
+		17428FEC21EC5B2600F7F621 /* SegmentTagged.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SegmentTagged.hpp; sourceTree = "<group>"; };
+		17428FED21EC5B2600F7F621 /* HMMModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HMMModel.hpp; sourceTree = "<group>"; };
+		17428FEE21EC5B2600F7F621 /* SegmentBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SegmentBase.hpp; sourceTree = "<group>"; };
+		17428FEF21EC5B2600F7F621 /* HMMSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HMMSegment.hpp; sourceTree = "<group>"; };
 		1774B65221E394860039A052 /* SMSFilters.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SMSFilters.xcdatamodel; sourceTree = "<group>"; };
 		1774B65521E398A20039A052 /* NewRuleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRuleTableViewController.swift; sourceTree = "<group>"; };
 		17771EB421EA5B440087AB48 /* MessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		17771EB621EA5B440087AB48 /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
 		17771EB821EA5B440087AB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		178A86E821DD1B34006A121B /* SMSFilters-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SMSFilters-Bridging-Header.h"; sourceTree = "<group>"; };
+		17873A9121EC7DAF00BA2199 /* SMSFilters-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SMSFilters-Bridging-Header.h"; sourceTree = "<group>"; };
 		17BA80D221DE601B0004C3A4 /* words_idf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words_idf.json; sourceTree = "<group>"; };
 		17BA80D321DE601C0004C3A4 /* SpamMessageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SpamMessageClassifier.mlmodel; sourceTree = "<group>"; };
 		17BA80D421DE601C0004C3A4 /* words_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words_array.json; sourceTree = "<group>"; };
 		17DC003920FCF73F00E212D0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		17F77B4021DF5E7800D0C98B /* Segmentor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Segmentor.cpp; sourceTree = "<group>"; };
-		17F77B4121DF5E7800D0C98B /* MySegmentor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySegmentor.h; sourceTree = "<group>"; };
 		17F77B4221DF5E7800D0C98B /* iosjieba.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iosjieba.bundle; sourceTree = "<group>"; };
-		17F77B4421DF5E7800D0C98B /* DictTrie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DictTrie.hpp; sourceTree = "<group>"; };
-		17F77B4521DF5E7800D0C98B /* Unicode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Unicode.hpp; sourceTree = "<group>"; };
-		17F77B4621DF5E7800D0C98B /* PreFilter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PreFilter.hpp; sourceTree = "<group>"; };
-		17F77B4721DF5E7800D0C98B /* FullSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FullSegment.hpp; sourceTree = "<group>"; };
-		17F77B4821DF5E7800D0C98B /* MixSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MixSegment.hpp; sourceTree = "<group>"; };
-		17F77B4921DF5E7800D0C98B /* MPSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MPSegment.hpp; sourceTree = "<group>"; };
-		17F77B4A21DF5E7800D0C98B /* KeywordExtractor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KeywordExtractor.hpp; sourceTree = "<group>"; };
-		17F77B4B21DF5E7800D0C98B /* Jieba.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Jieba.hpp; sourceTree = "<group>"; };
-		17F77B4C21DF5E7800D0C98B /* TextRankExtractor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TextRankExtractor.hpp; sourceTree = "<group>"; };
-		17F77B4D21DF5E7800D0C98B /* PosTagger.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PosTagger.hpp; sourceTree = "<group>"; };
-		17F77B4E21DF5E7800D0C98B /* Trie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Trie.hpp; sourceTree = "<group>"; };
-		17F77B5021DF5E7800D0C98B /* ThreadPool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ThreadPool.hpp; sourceTree = "<group>"; };
-		17F77B5121DF5E7800D0C98B /* Colors.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Colors.hpp; sourceTree = "<group>"; };
-		17F77B5221DF5E7800D0C98B /* StdExtension.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StdExtension.hpp; sourceTree = "<group>"; };
-		17F77B5321DF5E7800D0C98B /* StringUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StringUtil.hpp; sourceTree = "<group>"; };
-		17F77B5421DF5E7800D0C98B /* LocalVector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LocalVector.hpp; sourceTree = "<group>"; };
-		17F77B5521DF5E7800D0C98B /* BlockingQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BlockingQueue.hpp; sourceTree = "<group>"; };
-		17F77B5621DF5E7800D0C98B /* Closure.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Closure.hpp; sourceTree = "<group>"; };
-		17F77B5721DF5E7800D0C98B /* Config.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Config.hpp; sourceTree = "<group>"; };
-		17F77B5821DF5E7800D0C98B /* ForcePublic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ForcePublic.hpp; sourceTree = "<group>"; };
-		17F77B5921DF5E7800D0C98B /* BoundedQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BoundedQueue.hpp; sourceTree = "<group>"; };
-		17F77B5A21DF5E7800D0C98B /* ArgvContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ArgvContext.hpp; sourceTree = "<group>"; };
-		17F77B5B21DF5E7800D0C98B /* Condition.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Condition.hpp; sourceTree = "<group>"; };
-		17F77B5C21DF5E7800D0C98B /* Md5.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Md5.hpp; sourceTree = "<group>"; };
-		17F77B5D21DF5E7800D0C98B /* Thread.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Thread.hpp; sourceTree = "<group>"; };
-		17F77B5E21DF5E7800D0C98B /* MutexLock.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MutexLock.hpp; sourceTree = "<group>"; };
-		17F77B5F21DF5E7800D0C98B /* FileLock.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileLock.hpp; sourceTree = "<group>"; };
-		17F77B6021DF5E7800D0C98B /* Logging.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Logging.hpp; sourceTree = "<group>"; };
-		17F77B6121DF5E7800D0C98B /* NonCopyable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NonCopyable.hpp; sourceTree = "<group>"; };
-		17F77B6221DF5E7800D0C98B /* BoundedBlockingQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BoundedBlockingQueue.hpp; sourceTree = "<group>"; };
-		17F77B6321DF5E7800D0C98B /* QuerySegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = QuerySegment.hpp; sourceTree = "<group>"; };
-		17F77B6421DF5E7800D0C98B /* SegmentTagged.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SegmentTagged.hpp; sourceTree = "<group>"; };
-		17F77B6521DF5E7800D0C98B /* HMMModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HMMModel.hpp; sourceTree = "<group>"; };
-		17F77B6621DF5E7800D0C98B /* SegmentBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SegmentBase.hpp; sourceTree = "<group>"; };
-		17F77B6721DF5E7800D0C98B /* HMMSegment.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HMMSegment.hpp; sourceTree = "<group>"; };
-		17F77B6821DF5E7800D0C98B /* Segmentor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Segmentor.hpp; sourceTree = "<group>"; };
-		17F77B6921DF5E7800D0C98B /* MySegmentor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MySegmentor.mm; sourceTree = "<group>"; };
+		17F77B6821DF5E7800D0C98B /* Segmentor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Segmentor.h; sourceTree = "<group>"; };
 		17FB509121D70DE90066C203 /* QAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				17F77B3F21DF5E7800D0C98B /* iosjieba */,
-				1705272520FB715600549739 /* Classifier.swift */,
 				17A36C2C21D672FF0025668C /* controllers */,
 				1705270120FB27E400549739 /* AppDelegate.swift */,
 				1705270520FB27E400549739 /* Main.storyboard */,
@@ -170,7 +171,10 @@
 				1705270A20FB27E500549739 /* LaunchScreen.storyboard */,
 				1705270D20FB27E500549739 /* Info.plist */,
 				17DC003920FCF73F00E212D0 /* Settings.bundle */,
-				178A86E821DD1B34006A121B /* SMSFilters-Bridging-Header.h */,
+				17428FA821EC57FA00F7F621 /* iosjiebaWrappper.mm */,
+				17428FAA21EC581F00F7F621 /* iosjiebaWrapper.h */,
+				1705272520FB715600549739 /* Classifier.swift */,
+				17873A9121EC7DAF00BA2199 /* SMSFilters-Bridging-Header.h */,
 			);
 			path = SMSFilters;
 			sourceTree = "<group>";
@@ -181,6 +185,56 @@
 				17104D24214415BD00AC4061 /* Alamofire.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		17428FCB21EC5B2600F7F621 /* cppjieba */ = {
+			isa = PBXGroup;
+			children = (
+				17428FCC21EC5B2600F7F621 /* DictTrie.hpp */,
+				17428FCD21EC5B2600F7F621 /* Unicode.hpp */,
+				17428FCE21EC5B2600F7F621 /* PreFilter.hpp */,
+				17428FCF21EC5B2600F7F621 /* FullSegment.hpp */,
+				17428FD021EC5B2600F7F621 /* MixSegment.hpp */,
+				17428FD121EC5B2600F7F621 /* MPSegment.hpp */,
+				17428FD221EC5B2600F7F621 /* KeywordExtractor.hpp */,
+				17428FD321EC5B2600F7F621 /* Jieba.hpp */,
+				17428FD421EC5B2600F7F621 /* TextRankExtractor.hpp */,
+				17428FD521EC5B2600F7F621 /* PosTagger.hpp */,
+				17428FD621EC5B2600F7F621 /* Trie.hpp */,
+				17428FD721EC5B2600F7F621 /* limonp */,
+				17428FEB21EC5B2600F7F621 /* QuerySegment.hpp */,
+				17428FEC21EC5B2600F7F621 /* SegmentTagged.hpp */,
+				17428FED21EC5B2600F7F621 /* HMMModel.hpp */,
+				17428FEE21EC5B2600F7F621 /* SegmentBase.hpp */,
+				17428FEF21EC5B2600F7F621 /* HMMSegment.hpp */,
+			);
+			path = cppjieba;
+			sourceTree = "<group>";
+		};
+		17428FD721EC5B2600F7F621 /* limonp */ = {
+			isa = PBXGroup;
+			children = (
+				17428FD821EC5B2600F7F621 /* ThreadPool.hpp */,
+				17428FD921EC5B2600F7F621 /* Colors.hpp */,
+				17428FDA21EC5B2600F7F621 /* StdExtension.hpp */,
+				17428FDB21EC5B2600F7F621 /* StringUtil.hpp */,
+				17428FDC21EC5B2600F7F621 /* LocalVector.hpp */,
+				17428FDD21EC5B2600F7F621 /* BlockingQueue.hpp */,
+				17428FDE21EC5B2600F7F621 /* Closure.hpp */,
+				17428FDF21EC5B2600F7F621 /* Config.hpp */,
+				17428FE021EC5B2600F7F621 /* ForcePublic.hpp */,
+				17428FE121EC5B2600F7F621 /* BoundedQueue.hpp */,
+				17428FE221EC5B2600F7F621 /* ArgvContext.hpp */,
+				17428FE321EC5B2600F7F621 /* Condition.hpp */,
+				17428FE421EC5B2600F7F621 /* Md5.hpp */,
+				17428FE521EC5B2600F7F621 /* Thread.hpp */,
+				17428FE621EC5B2600F7F621 /* MutexLock.hpp */,
+				17428FE721EC5B2600F7F621 /* FileLock.hpp */,
+				17428FE821EC5B2600F7F621 /* Logging.hpp */,
+				17428FE921EC5B2600F7F621 /* NonCopyable.hpp */,
+				17428FEA21EC5B2600F7F621 /* BoundedBlockingQueue.hpp */,
+			);
+			path = limonp;
 			sourceTree = "<group>";
 		};
 		17771EB521EA5B440087AB48 /* MessageExtension */ = {
@@ -215,64 +269,12 @@
 		17F77B3F21DF5E7800D0C98B /* iosjieba */ = {
 			isa = PBXGroup;
 			children = (
+				17428FCB21EC5B2600F7F621 /* cppjieba */,
+				17F77B6821DF5E7800D0C98B /* Segmentor.h */,
 				17F77B4021DF5E7800D0C98B /* Segmentor.cpp */,
-				17F77B4121DF5E7800D0C98B /* MySegmentor.h */,
 				17F77B4221DF5E7800D0C98B /* iosjieba.bundle */,
-				17F77B4321DF5E7800D0C98B /* cppjieba */,
-				17F77B6821DF5E7800D0C98B /* Segmentor.hpp */,
-				17F77B6921DF5E7800D0C98B /* MySegmentor.mm */,
 			);
 			path = iosjieba;
-			sourceTree = "<group>";
-		};
-		17F77B4321DF5E7800D0C98B /* cppjieba */ = {
-			isa = PBXGroup;
-			children = (
-				17F77B4421DF5E7800D0C98B /* DictTrie.hpp */,
-				17F77B4521DF5E7800D0C98B /* Unicode.hpp */,
-				17F77B4621DF5E7800D0C98B /* PreFilter.hpp */,
-				17F77B4721DF5E7800D0C98B /* FullSegment.hpp */,
-				17F77B4821DF5E7800D0C98B /* MixSegment.hpp */,
-				17F77B4921DF5E7800D0C98B /* MPSegment.hpp */,
-				17F77B4A21DF5E7800D0C98B /* KeywordExtractor.hpp */,
-				17F77B4B21DF5E7800D0C98B /* Jieba.hpp */,
-				17F77B4C21DF5E7800D0C98B /* TextRankExtractor.hpp */,
-				17F77B4D21DF5E7800D0C98B /* PosTagger.hpp */,
-				17F77B4E21DF5E7800D0C98B /* Trie.hpp */,
-				17F77B4F21DF5E7800D0C98B /* limonp */,
-				17F77B6321DF5E7800D0C98B /* QuerySegment.hpp */,
-				17F77B6421DF5E7800D0C98B /* SegmentTagged.hpp */,
-				17F77B6521DF5E7800D0C98B /* HMMModel.hpp */,
-				17F77B6621DF5E7800D0C98B /* SegmentBase.hpp */,
-				17F77B6721DF5E7800D0C98B /* HMMSegment.hpp */,
-			);
-			path = cppjieba;
-			sourceTree = "<group>";
-		};
-		17F77B4F21DF5E7800D0C98B /* limonp */ = {
-			isa = PBXGroup;
-			children = (
-				17F77B5021DF5E7800D0C98B /* ThreadPool.hpp */,
-				17F77B5121DF5E7800D0C98B /* Colors.hpp */,
-				17F77B5221DF5E7800D0C98B /* StdExtension.hpp */,
-				17F77B5321DF5E7800D0C98B /* StringUtil.hpp */,
-				17F77B5421DF5E7800D0C98B /* LocalVector.hpp */,
-				17F77B5521DF5E7800D0C98B /* BlockingQueue.hpp */,
-				17F77B5621DF5E7800D0C98B /* Closure.hpp */,
-				17F77B5721DF5E7800D0C98B /* Config.hpp */,
-				17F77B5821DF5E7800D0C98B /* ForcePublic.hpp */,
-				17F77B5921DF5E7800D0C98B /* BoundedQueue.hpp */,
-				17F77B5A21DF5E7800D0C98B /* ArgvContext.hpp */,
-				17F77B5B21DF5E7800D0C98B /* Condition.hpp */,
-				17F77B5C21DF5E7800D0C98B /* Md5.hpp */,
-				17F77B5D21DF5E7800D0C98B /* Thread.hpp */,
-				17F77B5E21DF5E7800D0C98B /* MutexLock.hpp */,
-				17F77B5F21DF5E7800D0C98B /* FileLock.hpp */,
-				17F77B6021DF5E7800D0C98B /* Logging.hpp */,
-				17F77B6121DF5E7800D0C98B /* NonCopyable.hpp */,
-				17F77B6221DF5E7800D0C98B /* BoundedBlockingQueue.hpp */,
-			);
-			path = limonp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,7 +410,7 @@
 				1774B65621E398A20039A052 /* NewRuleTableViewController.swift in Sources */,
 				17BA80D721DE601C0004C3A4 /* SpamMessageClassifier.mlmodel in Sources */,
 				17F77B6A21DF5E7800D0C98B /* Segmentor.cpp in Sources */,
-				17F77B6E21DF5E7800D0C98B /* MySegmentor.mm in Sources */,
+				17428FA921EC57FA00F7F621 /* iosjiebaWrappper.mm in Sources */,
 				1705270220FB27E400549739 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +421,9 @@
 			files = (
 				17771EC121EA63A10087AB48 /* SpamMessageClassifier.mlmodel in Sources */,
 				17771EBF21EA5E4B0087AB48 /* Classifier.swift in Sources */,
+				17873A8E21EC796000BA2199 /* iosjiebaWrappper.mm in Sources */,
 				17771EC021EA60B50087AB48 /* SMSFilters.xcdatamodeld in Sources */,
+				17873A8F21EC798000BA2199 /* Segmentor.cpp in Sources */,
 				17771EB721EA5B440087AB48 /* MessageFilterExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,6 +580,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S74V2RZ46A;
@@ -583,6 +588,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SMSFilters/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -592,7 +598,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiwihui.SMSFilters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SMSFilters/SMSFilters-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64e arm64";
@@ -604,6 +610,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S74V2RZ46A;
@@ -611,6 +618,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SMSFilters/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -620,7 +628,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiwihui.SMSFilters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SMSFilters/SMSFilters-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64e arm64";
@@ -644,6 +652,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiwihui.SMSFilters.MessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SMSFilters/SMSFilters-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -665,6 +674,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiwihui.SMSFilters.MessageExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SMSFilters/SMSFilters-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

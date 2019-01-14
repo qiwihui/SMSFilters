@@ -122,10 +122,9 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling {
         }
         
         // 模型过滤
-//        let classfier = Classifier()
-//        let result = classfier.predict(queryRequest.messageBody!)
-//        return result ? .filter : .none
-        return .none
+        let classfier = Classifier()
+        let result = classfier.predict(queryRequest.messageBody!)
+        return result ? .filter : .none
     }
     
     private func action(for networkResponse: ILNetworkResponse) -> ILMessageFilterAction {
