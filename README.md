@@ -24,10 +24,10 @@ $ conda env create --file=environment.yml
     - [x] 提交短信
 
 2. 自定义规则
-    - [ ] 关键词黑名单
-    - [ ] 关键词白名单
-    - [ ] 号码黑名单
-    - [ ] 号码白名单
+    - [x] 关键词黑名单
+    - [x] 关键词白名单
+    - [x] 号码黑名单
+    - [x] 号码白名单
 
 3. 关于
     - [ ] 帮助和常见问题
@@ -38,4 +38,6 @@ $ conda env create --file=environment.yml
 
 ### 界面截图
 
-![主要界面](images/screenshot_main.png)
+主要界面             |  短信测试界面
+:-------------------------:|:-------------------------:
+![](images/screenshot_main.png)  |  ![](images/screenshot_predict.png)
