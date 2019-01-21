@@ -272,11 +272,9 @@ class MainViewController: UITableViewController, NSFetchedResultsControllerDeleg
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showQuestionsAndAnswers" {
-            print("showQuestionsAndAnswers")
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                let destinationController = segue.destination as! DetailTableViewController
-//                destinationController.message = "ok"
-//            }
+//            let navController = segue.destination as! UINavigationController
+//            let qsTableViewController = navController.viewControllers.first as! QATableViewController
+            print("使用和常见问题")
         } else if segue.identifier == "editRules" {
             print("修改规则")
             let navController = segue.destination as! UINavigationController
@@ -304,7 +302,7 @@ extension MainViewController: UIViewControllerPreviewingDelegate {
             return nil
         }
         
-        guard let detailViewController = storyboard?.instantiateViewController(withIdentifier: "QAViewController") as? QAViewController else {
+        guard let detailViewController = storyboard?.instantiateViewController(withIdentifier: "QATableViewController") as? QATableViewController else {
             return nil
         }
         

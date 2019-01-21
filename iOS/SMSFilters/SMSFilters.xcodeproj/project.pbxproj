@@ -20,17 +20,19 @@
 		17771EBB21EA5B440087AB48 /* MessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 17771EB421EA5B440087AB48 /* MessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		17771EBF21EA5E4B0087AB48 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1705272520FB715600549739 /* Classifier.swift */; };
 		17771EC021EA60B50087AB48 /* SMSFilters.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1774B65121E394860039A052 /* SMSFilters.xcdatamodeld */; };
-		17771EC121EA63A10087AB48 /* SpamMessageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17BA80D321DE601C0004C3A4 /* SpamMessageClassifier.mlmodel */; };
 		17873A8E21EC796000BA2199 /* iosjiebaWrappper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 17428FA821EC57FA00F7F621 /* iosjiebaWrappper.mm */; };
 		17873A8F21EC798000BA2199 /* Segmentor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17F77B4021DF5E7800D0C98B /* Segmentor.cpp */; };
-		17BA80D521DE601C0004C3A4 /* words_idf.json in Resources */ = {isa = PBXBuildFile; fileRef = 17BA80D221DE601B0004C3A4 /* words_idf.json */; };
-		17BA80D721DE601C0004C3A4 /* SpamMessageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17BA80D321DE601C0004C3A4 /* SpamMessageClassifier.mlmodel */; };
-		17BA80D921DE601C0004C3A4 /* words_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 17BA80D421DE601C0004C3A4 /* words_array.json */; };
 		17BA80DD21DEFE5D0004C3A4 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1705272520FB715600549739 /* Classifier.swift */; };
 		17DC003A20FCF73F00E212D0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17DC003920FCF73F00E212D0 /* Settings.bundle */; };
+		17EC5C2221F5E22B004BC323 /* words_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 17EC5C1F21F5E22B004BC323 /* words_array.json */; };
+		17EC5C2321F5E22B004BC323 /* words_idf.json in Resources */ = {isa = PBXBuildFile; fileRef = 17EC5C2021F5E22B004BC323 /* words_idf.json */; };
+		17EC5C2421F5E22B004BC323 /* SpamMessageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17EC5C2121F5E22B004BC323 /* SpamMessageClassifier.mlmodel */; };
+		17EC5C2521F5E23C004BC323 /* SpamMessageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17EC5C2121F5E22B004BC323 /* SpamMessageClassifier.mlmodel */; };
+		17EC5C2621F5E24C004BC323 /* words_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 17EC5C1F21F5E22B004BC323 /* words_array.json */; };
+		17EC5C2721F5E24C004BC323 /* words_idf.json in Resources */ = {isa = PBXBuildFile; fileRef = 17EC5C2021F5E22B004BC323 /* words_idf.json */; };
+		17EC5C2921F5EB36004BC323 /* QATableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EC5C2821F5EB36004BC323 /* QATableViewController.swift */; };
 		17F77B6A21DF5E7800D0C98B /* Segmentor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17F77B4021DF5E7800D0C98B /* Segmentor.cpp */; };
 		17F77B6C21DF5E7800D0C98B /* iosjieba.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17F77B4221DF5E7800D0C98B /* iosjieba.bundle */; };
-		17FB509221D70DE90066C203 /* QAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB509121D70DE90066C203 /* QAViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,14 +112,14 @@
 		17771EB621EA5B440087AB48 /* MessageFilterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFilterExtension.swift; sourceTree = "<group>"; };
 		17771EB821EA5B440087AB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17873A9121EC7DAF00BA2199 /* SMSFilters-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SMSFilters-Bridging-Header.h"; sourceTree = "<group>"; };
-		17BA80D221DE601B0004C3A4 /* words_idf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words_idf.json; sourceTree = "<group>"; };
-		17BA80D321DE601C0004C3A4 /* SpamMessageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SpamMessageClassifier.mlmodel; sourceTree = "<group>"; };
-		17BA80D421DE601C0004C3A4 /* words_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words_array.json; sourceTree = "<group>"; };
 		17DC003920FCF73F00E212D0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		17EC5C1F21F5E22B004BC323 /* words_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words_array.json; sourceTree = "<group>"; };
+		17EC5C2021F5E22B004BC323 /* words_idf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words_idf.json; sourceTree = "<group>"; };
+		17EC5C2121F5E22B004BC323 /* SpamMessageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SpamMessageClassifier.mlmodel; sourceTree = "<group>"; };
+		17EC5C2821F5EB36004BC323 /* QATableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QATableViewController.swift; sourceTree = "<group>"; };
 		17F77B4021DF5E7800D0C98B /* Segmentor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Segmentor.cpp; sourceTree = "<group>"; };
 		17F77B4221DF5E7800D0C98B /* iosjieba.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iosjieba.bundle; sourceTree = "<group>"; };
 		17F77B6821DF5E7800D0C98B /* Segmentor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Segmentor.h; sourceTree = "<group>"; };
-		17FB509121D70DE90066C203 /* QAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,8 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				1705270320FB27E400549739 /* MainViewController.swift */,
-				17FB509121D70DE90066C203 /* QAViewController.swift */,
 				1774B65521E398A20039A052 /* NewRuleTableViewController.swift */,
+				17EC5C2821F5EB36004BC323 /* QATableViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -259,9 +261,9 @@
 		17E88F192160779C00D4610E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				17BA80D321DE601C0004C3A4 /* SpamMessageClassifier.mlmodel */,
-				17BA80D421DE601C0004C3A4 /* words_array.json */,
-				17BA80D221DE601B0004C3A4 /* words_idf.json */,
+				17EC5C2121F5E22B004BC323 /* SpamMessageClassifier.mlmodel */,
+				17EC5C1F21F5E22B004BC323 /* words_array.json */,
+				17EC5C2021F5E22B004BC323 /* words_idf.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -362,9 +364,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				17DC003A20FCF73F00E212D0 /* Settings.bundle in Resources */,
-				17BA80D521DE601C0004C3A4 /* words_idf.json in Resources */,
+				17EC5C2321F5E22B004BC323 /* words_idf.json in Resources */,
+				17EC5C2221F5E22B004BC323 /* words_array.json in Resources */,
 				1705270C20FB27E500549739 /* LaunchScreen.storyboard in Resources */,
-				17BA80D921DE601C0004C3A4 /* words_array.json in Resources */,
 				17F77B6C21DF5E7800D0C98B /* iosjieba.bundle in Resources */,
 				1705270920FB27E500549739 /* Assets.xcassets in Resources */,
 				1705270720FB27E400549739 /* Main.storyboard in Resources */,
@@ -375,6 +377,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17EC5C2621F5E24C004BC323 /* words_array.json in Resources */,
+				17EC5C2721F5E24C004BC323 /* words_idf.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,14 +408,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				17BA80DD21DEFE5D0004C3A4 /* Classifier.swift in Sources */,
-				17FB509221D70DE90066C203 /* QAViewController.swift in Sources */,
 				1774B65321E394860039A052 /* SMSFilters.xcdatamodeld in Sources */,
 				17771EAF21EA4F340087AB48 /* MainViewController.swift in Sources */,
+				17EC5C2421F5E22B004BC323 /* SpamMessageClassifier.mlmodel in Sources */,
 				1774B65621E398A20039A052 /* NewRuleTableViewController.swift in Sources */,
-				17BA80D721DE601C0004C3A4 /* SpamMessageClassifier.mlmodel in Sources */,
 				17F77B6A21DF5E7800D0C98B /* Segmentor.cpp in Sources */,
 				17428FA921EC57FA00F7F621 /* iosjiebaWrappper.mm in Sources */,
 				1705270220FB27E400549739 /* AppDelegate.swift in Sources */,
+				17EC5C2921F5EB36004BC323 /* QATableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,11 +423,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17771EC121EA63A10087AB48 /* SpamMessageClassifier.mlmodel in Sources */,
 				17771EBF21EA5E4B0087AB48 /* Classifier.swift in Sources */,
 				17873A8E21EC796000BA2199 /* iosjiebaWrappper.mm in Sources */,
 				17771EC021EA60B50087AB48 /* SMSFilters.xcdatamodeld in Sources */,
 				17873A8F21EC798000BA2199 /* Segmentor.cpp in Sources */,
+				17EC5C2521F5E23C004BC323 /* SpamMessageClassifier.mlmodel in Sources */,
 				17771EB721EA5B440087AB48 /* MessageFilterExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

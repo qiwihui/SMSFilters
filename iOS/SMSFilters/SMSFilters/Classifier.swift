@@ -19,9 +19,10 @@ class Classifier {
     init() {
         let wordsPath = Bundle.main.url(forResource:"words_array", withExtension:"json")
         do {
-            let wordsData = try Data(contentsOf: wordsPath!)
+            let wordsData = try Data(contentsOf: wordsPath!, options: .mappedIfSafe)
             if let wordsDict = try JSONSerialization.jsonObject(with: wordsData, options: []) as? [String:Int] {
                 self.vocabulary = wordsDict
+                print(self.vocabulary.count)
             }
         } catch {
             fatalError("oops could not load words_array")
@@ -51,6 +52,7 @@ class Classifier {
         do {
             let result = try self.model.prediction(message: mlarray)
             print("Predict result: \(result)")
+            print("Result probability\(result.classProbability)")
             return result.spam_or_not == 1
         } catch {
             print("Error: \(error)")
@@ -60,8 +62,9 @@ class Classifier {
     
     func tokenize(_ message:String) -> [String] {
         print("tokenize...")
+        let trimmed = message.lowercased().trimmingCharacters(in: CharacterSet(charactersIn: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"))
         let words = NSMutableArray()
-        JiebaWrapper().objcJiebaCut(message, toWords: words)
+        JiebaWrapper().objcJiebaCut(trimmed, toWords: words)
         return words as! [String]
     }
 
